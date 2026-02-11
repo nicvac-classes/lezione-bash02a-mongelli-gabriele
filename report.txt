@@ -1,0 +1,240 @@
+ cd esercizi/
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi (main) $ ls
+archivio  backup  documenti  log  progetti  sandbox
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi (main) $ cd documenti/
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/documenti (main) $ cat appunti_reti.txt 
+Lezione 1 - Modello OSI
+
+Il modello OSI (Open Systems Interconnection) è composto da 7 livelli:
+
+1. Fisico - trasmissione dei bit sul mezzo fisico
+2. Data Link - gestione dei frame e accesso al mezzo
+3. Rete - instradamento dei pacchetti (IP)
+4. Trasporto - comunicazione end-to-end (TCP, UDP)
+5. Sessione - gestione delle sessioni di comunicazione
+6. Presentazione - codifica e crittografia dei dati
+7. Applicazione - interfaccia con l'utente (HTTP, FTP, SMTP)
+
+Il modello TCP/IP semplifica questi livelli in 4:
+- Accesso alla rete (livelli 1-2)
+- Internet (livello 3)
+- Trasporto (livello 4)
+- Applicazione (livelli 5-7)
+
+Ogni livello comunica solo con il livello adiacente.
+Il principio di incapsulamento prevede che ogni livello aggiunga un header ai dati.
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/documenti (main) $ head -n 3 appunti_sicurezza.txt 
+Sicurezza Informatica - Concetti Base
+
+La triade CIA:
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/documenti (main) $ tail -n 5 todo.txt 
+
+Scadenze:
+- Backend: 15 marzo
+- Frontend: 30 marzo
+- Consegna finale: 15 aprile
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/documenti (main) $ 
+
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/log (main) $ head -n 5 server.log 
+2024-01-15 08:00:01 [INFO] Server avviato sulla porta 8080
+2024-01-15 08:00:02 [INFO] Connessione al database stabilita
+2024-01-15 08:05:15 [INFO] Richiesta GET /index.html - 200 OK
+2024-01-15 08:05:16 [INFO] Richiesta GET /style.css - 200 OK
+2024-01-15 08:10:30 [WARNING] Tentativo di accesso non autorizzato da 192.168.1.100
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/log (main) $ tail -n 3 server.log 
+2024-01-15 10:00:00 [INFO] Server in fase di arresto
+2024-01-15 10:00:01 [INFO] Connessione al database chiusa
+2024-01-15 10:00:02 [INFO] Server arrestato correttamente
+
+2024-01-15 08:05:00 mario.rossi login successo 192.168.1.10
+2024-01-15 08:10:30 admin login fallito 192.168.1.100
+2024-01-15 08:10:31 admin login fallito 192.168.1.100
+2024-01-15 08:15:00 admin login successo 192.168.1.100
+2024-01-15 08:20:00 luca.bianchi login successo 192.168.1.20
+2024-01-15 08:25:00 anna.verdi login successo 192.168.1.30
+2024-01-15 08:30:00 mario.rossi logout 192.168.1.10
+2024-01-15 08:35:00 guest login fallito 192.168.1.50
+2024-01-15 08:40:00 luca.bianchi logout 192.168.1.20
+2024-01-15 08:45:00 sara.neri login successo 192.168.1.40
+accessi.log
+
+BLOCCO 2
+
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/documenti (main) $ cp appunti_reti.txt  appunti_reti_backup.txt
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/documenti (main) $ cp todo.txt ../backup/
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/documenti (main) $ ls
+appunti_database.txt  appunti_reti.txt  appunti_reti_backup.txt  appunti_sicurezza.txt  todo.txt
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/documenti (main) $ cd ../backup/
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/backup (main) $ ls
+todo.txt
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi (main) $ cp -r progetti backup/progetti
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi (main) $ ls backup
+progetti  todo.txt
+
+BLOCCO 3 
+
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/documenti (main) $ mv todo.txt attivita.txt
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/documenti (main) $ ls
+appunti_database.txt  appunti_reti.txt  appunti_reti_backup.txt  appunti_sicurezza.txt  attivita.txt
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/documenti (main) $ mv attivita.txt ../archivio/
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/documenti (main) $ ls ../archivio/
+attivita.txt      documento_febbraio.pdf  foto_milano_2023.jpg  foto_roma_2024.jpg  readme.md
+budget_2023.xlsx  documento_gennaio.pdf   foto_napoli_2024.jpg  note.txt            relazione_finale.docx
+budget_2024.xlsx  documento_marzo.pdf     foto_roma_2023.jpg    presentazione.pptx  relazione_intermedia.docx
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/documenti (main) $ ls
+appunti_database.txt  appunti_reti.txt  appunti_reti_backup.txt  appunti_sicurezza.txt
+
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/documenti (main) $ cd ../progetti/webapp/
+@gabrielemong ➜ .../lezione-bash02a-mongelli-gabriele/esercizi/progetti/webapp (main) $ mv app.js main.js
+@gabrielemong ➜ .../lezione-bash02a-mongelli-gabriele/esercizi/progetti/webapp (main) $ mv style.css ../../backup/
+@gabrielemong ➜ .../lezione-bash02a-mongelli-gabriele/esercizi/progetti/webapp (main) $ ls
+index.html  main.js
+@gabrielemong ➜ .../lezione-bash02a-mongelli-gabriele/esercizi/progetti/webapp (main) $ ls ../../backup/
+progetti  style.css  todo.txt
+
+BLOCCO 4
+
+@gabrielemong ➜ .../lezione-bash02a-mongelli-gabriele/esercizi/progetti/webapp (main) $ cd ../../archivio/
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/archivio (main) $ rm note.txt 
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/archivio (main) $ rm -i readme.md
+rm: remove regular empty file 'readme.md'? y
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/archivio (main) $ ls
+attivita.txt      documento_febbraio.pdf  foto_milano_2023.jpg  foto_roma_2024.jpg     relazione_intermedia.docx
+budget_2023.xlsx  documento_gennaio.pdf   foto_napoli_2024.jpg  presentazione.pptx
+budget_2024.xlsx  documento_marzo.pdf     foto_roma_2023.jpg    relazione_finale.docx
+
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi (main) $ mkdir temp
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/temp (main) $ cd ..
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi (main) $ touch temp/a.txt temp/b.txt
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi (main) $ rm -r temp
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi (main) $ ls
+archivio  backup  documenti  log  progetti  sandbox
+
+BLOCCO 5
+
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi (main) $ cd archivio/
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/archivio (main) $ rm *.jpg
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/archivio (main) $ ls *.pdf
+documento_febbraio.pdf  documento_gennaio.pdf  documento_marzo.pdf
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/archivio (main) $ ls *2024*
+budget_2024.xlsx
+
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/archivio (main) $ ls relazione*
+relazione_finale.docx  relazione_intermedia.docx
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/archivio (main) $ ls *.xlsx *.docx
+budget_2023.xlsx  budget_2024.xlsx  relazione_finale.docx  relazione_intermedia.docx
+gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/archivio (main) $ ls foto_roma*
+foto_roma_2023.jpg  foto_roma_2024.jpg
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/archivio (main) $ ls budget_202[34].xlsx
+budget_2023.xlsx  budget_2024.xlsx
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/archivio (main) $ ls documento_???????.pdf
+documento_gennaio.pdf
+
+
+BLOCCO 6
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/sandbox (main) $ echo "mela" > frutti.txt
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/sandbox (main) $ echo "banana" >> frutti.txt 
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/sandbox (main) $ cat frutti.txt 
+
+mela
+banana
+
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/archivio (main) $ ls *.jpg > ../sandbox/elenco_
+foto.txt
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/archivio (main) $ ls *.pdf >>../sandbox/elenco_foto.txt 
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/archivio (main) $ cat ../sandbox/elenco_foto.txt 
+foto_milano_2023.jpg
+foto_napoli_2024.jpg
+foto_roma_2023.jpg
+foto_roma_2024.jpg
+documento_febbraio.pdf
+documento_gennaio.pdf
+documento_marzo.pdf
+
+
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/log (main) $ head -n 5 server.log > ../sandbox/log_estratto.txt
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/log (main) $ tail -n 3 server.log >> ../sandbox/log_estratto.txt
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/log (main) $ cat ../sandbox/log_estratto.txt
+2024-01-15 08:00:01 [INFO] Server avviato sulla porta 8080
+2024-01-15 08:00:02 [INFO] Connessione al database stabilita
+2024-01-15 08:05:15 [INFO] Richiesta GET /index.html - 200 OK
+2024-01-15 08:05:16 [INFO] Richiesta GET /style.css - 200 OK
+2024-01-15 08:10:30 [WARNING] Tentativo di accesso non autorizzato da 192.168.1.100
+2024-01-15 10:00:00 [INFO] Server in fase di arresto
+2024-01-15 10:00:01 [INFO] Connessione al database chiusa
+2024-01-15 10:00:02 [INFO] Server arrestato correttamente
+
+BLOCCO 7
+
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/log (main) $ cat server.log | grep "ERROR"
+2024-01-15 08:20:45 [ERROR] Connessione al database persa
+2024-01-15 08:20:46 [ERROR] Timeout nella riconnessione al database
+2024-01-15 08:45:10 [ERROR] File non trovato: /images/logo.png - 404
+2024-01-15 09:45:00 [ERROR] Impossibile inviare email di notifica
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/log (main) $  cat server.log | grep "WARNING" |
+ wc -l
+4
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/log (main) $ cat server.log | grep "INFO" > ../sandbox/solo_info.txt
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/log (main) $ cat ../sandbox/solo_info.txt
+2024-01-15 08:00:01 [INFO] Server avviato sulla porta 8080
+2024-01-15 08:00:02 [INFO] Connessione al database stabilita
+2024-01-15 08:05:15 [INFO] Richiesta GET /index.html - 200 OK
+2024-01-15 08:05:16 [INFO] Richiesta GET /style.css - 200 OK
+2024-01-15 08:15:00 [INFO] Richiesta POST /api/login - 200 OK
+2024-01-15 08:20:50 [INFO] Riconnessione al database riuscita
+2024-01-15 08:30:00 [INFO] Richiesta GET /api/studenti - 200 OK
+2024-01-15 08:40:00 [INFO] Richiesta PUT /api/studenti/15 - 200 OK
+2024-01-15 08:50:00 [INFO] Backup automatico completato
+2024-01-15 09:00:00 [INFO] Richiesta GET /api/classi - 200 OK
+2024-01-15 09:30:00 [INFO] Pulizia cache completata
+2024-01-15 10:00:00 [INFO] Server in fase di arresto
+2024-01-15 10:00:01 [INFO] Connessione al database chiusa
+2024-01-15 10:00:02 [INFO] Server arrestato correttamente
+
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/log (main) $ cat accessi.log | grep "fallito"
+2024-01-15 08:10:30 admin login fallito 192.168.1.100
+2024-01-15 08:10:31 admin login fallito 192.168.1.100
+2024-01-15 08:35:00 guest login fallito 192.168.1.50
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/log (main) $ cat accessi.log | grep "successo" | wc -l
+5
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/log (main) $ cat accessi.log | grep "login" | awk '{print $3}' | sort | uniq
+admin
+anna.verdi
+guest
+luca.bianchi
+mario.rossi
+sara.neri
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/log (main) $ ls ../archivio/*.jpg | wc -l
+4
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/log (main) $  cat ../documenti/appunti_reti.txt | grep "livello"
+- Internet (livello 3)
+- Trasporto (livello 4)
+Ogni livello comunica solo con il livello adiacente.
+Il principio di incapsulamento prevede che ogni livello aggiunga un header ai dati.
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/log (main) $ cat ../documenti/appunti_reti.txt | grep "livello"
+- Internet (livello 3)
+- Trasporto (livello 4)
+Ogni livello comunica solo con il livello adiacente.
+Il principio di incapsulamento prevede che ogni livello aggiunga un header ai dati.
+
+EXTRA 1
+
+
+gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi/log (main) $ cd ../
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi (main) $ cp documenti/*.txt backup/
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi (main) $  ls backup/
+appunti_database.txt  appunti_reti.txt  appunti_sicurezza.txt  todo.txt
+EXTRA 2
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi (main) $ grep "192.168.1.100" log/accessi.log | wc -l
+4
+
+
+EXTRA 3
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi (main) $ echo "=== REPORT ===" > sandbox/report.txt
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi (main) $ echo "" >> sandbox/report.txt
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi (main) $ head -n 3 log/server.log >> sandbox/report.txt
+
+EXTRA 4
+
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi (main) $ grep "fallito" log/accessi.log > sandbox/tentativi_falliti.txt
+@gabrielemong ➜ /workspaces/lezione-bash02a-mongelli-gabriele/esercizi (main) $ grep "fallito" log/accessi.log | wc -l >> sandbox/tentativi_falliti.txt

@@ -578,7 +578,7 @@ cat ../sandbox/elenco_foto.txt
 
 <details>
 <summary>Solo dopo aver svolto l'esercizio, apri qui per vedere la soluzione</summary>
-
+ 
 ```bash
 cd /workspaces/*Lezione_Bash02*/esercizi/log
 
